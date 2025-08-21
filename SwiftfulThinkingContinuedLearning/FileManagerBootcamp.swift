@@ -56,7 +56,7 @@ class LocalFileManager {
     }
     
     func saveImage(image: UIImage, name: String) -> String {
-        
+        createdFolderIfNeeded()
         guard
             let data = image.jpegData(compressionQuality: 1.0),
             let path = getPathForImage(name: name) else {
@@ -67,7 +67,7 @@ class LocalFileManager {
             try data.write(to: path)
             print(path)
             return "Success Saving!"
-        } catch let error {
+        } catch let error as NSError {
             return "Error saving. \(error)"
         }
     }
