@@ -24,7 +24,8 @@ struct AccessibilityTextBootcamp: View {
                             Text("Welcome to my app")
                                 .truncationMode(.tail)
                         }
-                        .font(.title)
+                        .dynamicTypeSize(...DynamicTypeSize.large)
+                        .dynamicTypeSize(.xxLarge)
                         Text("This is some longer text that expands to multiplelines.")
                             .font(.subheadline)
                             .frame(maxWidth: .infinity, alignment: .leading)
