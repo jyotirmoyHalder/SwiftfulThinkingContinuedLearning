@@ -37,12 +37,14 @@ struct WeakSelfSecondScreen: View {
     @StateObject var vm = WeakSelfSecondScreenViewModel()
     
     var body: some View {
-        Text("Second View")
-            .font(.largeTitle)
-            .foregroundStyle(Color.red)
-        
-        if let data = vm.data {
-            Text("\(data)")
+        VStack {
+            Text("Second View")
+                .font(.largeTitle)
+                .foregroundStyle(Color.red)
+            
+            if let data = vm.data {
+                Text(data)
+            }
         }
     }
 }
@@ -66,7 +68,7 @@ class WeakSelfSecondScreenViewModel: ObservableObject {
     
     func getData() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 500) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.data = "NEW DATA!!!"
         }
     }
