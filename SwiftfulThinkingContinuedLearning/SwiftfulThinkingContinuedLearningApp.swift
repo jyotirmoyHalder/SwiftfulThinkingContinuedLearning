@@ -12,7 +12,8 @@ struct SwiftfulThinkingContinuedLearningApp: App {
     var body: some Scene {
         WindowGroup {
 //            AccessibilityVoiceOverBootcamp()
-            CodablePractice()
+//            CodablePractice()
+            PracticeDownloadJSONWithEscaping()
         }
     }
 }
